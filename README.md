@@ -1,6 +1,5 @@
 # AI Face Emotion & Persona Overlay
 
-Created with love by tubakhxn
 
 Realtime webcam app that detects faces with MediaPipe, infers emotions (fast heuristics or optional DL), and draws a cyberpunk neon HUD with persona labels and screenshot support.
 
@@ -20,7 +19,7 @@ This README collects everything you need to run, tune, and publish the project o
 - Adding an ONNX model (optional)
 - Troubleshooting
 - Packaging for GitHub (tips)
-- Contributing & license
+-  license
 
 ---
 
@@ -176,109 +175,5 @@ This project is provided as-is. If you want, I can add an `LICENSE` file (MIT) t
 
 ---
 
-Created with love by tubakhxn
 
-# AI Face Emotion & Persona Overlay
 
-Created with love by tubakhxn
-
-A realtime webcam application that detects faces (MediaPipe), infers an emotion (fast landmark heuristics or optional DL via ONNX/DeepFace), and draws a cyberpunk neon HUD with persona overlays and screenshot support.
-
-This README contains everything you need to run, tweak, and publish the project on GitHub.
-
-## Table of contents
-- Features
-- Requirements & notes
-- Quick start (recommended: lightweight / ONNX)
-- Full DL install (optional)
-- How it works (architecture)
-- Running the app (detailed)
-- Keyboard controls & runtime tuning
-- Adding an ONNX model (optional)
-- Troubleshooting
-- Packaging for GitHub (tips)
-- Contributing & license
-
-## Features
-- Real-time webcam (OpenCV)
-- Face detection + dense landmarks (MediaPipe Face Mesh)
-- Fast image-based emotion heuristics (default, low-latency)
-- Optional DL inference via ONNX (recommended) or DeepFace/TensorFlow
-- Cyberpunk neon HUD (glow, rounded rect, scanline, glitch text)
-- FPS counter, smooth label/bbox interpolation, fade-on-change animation
-- Screenshot saving (press `S`) with a shutter sound on Windows
-
-## Requirements & notes
-- OS: Windows (tested), other OS should work but audio uses winsound on Windows only
-- Python: 3.10+ (3.11 recommended)
-- Camera: any webcam supported by OpenCV
-
-Files of interest are inside the `ai_face_persona/` folder. When running, prefer executing from within that folder so relative imports resolve.
-
-## Quick start (recommended: lightweight / ONNX)
-1. Open PowerShell in the project root (where this README is).
-2. Create a virtual environment and install lightweight (ONNX-capable) dependencies:
-
-```powershell
-python -m venv .venv
-.venv\Scripts\python -m pip install --upgrade pip
-.venv\Scripts\python -m pip install -r .\ai_face_persona\requirements_nodl.txt
-```
-
-3. Run the app from the `ai_face_persona` folder:
-
-```powershell
-cd ai_face_persona
-..\.venv\Scripts\python main.py
-```
-
-Created with love by tubakhxn
-# AI Face Emotion & Persona Overlay
-
-Build by Tuba khan
-
-This project shows a real-time webcam feed with face detection (MediaPipe), an
-emotion classifier (Hugging Face "joeddav/distilbert-base-uncased-go-emotions"), and
-an animated cyberpunk neon HUD overlay.
-
-Features
-- Real-time webcam using OpenCV
-- Face detection + landmarks using MediaPipe Face Mesh
-- Emotion recognition using Hugging Face (adapter from facial heuristics)
-- Cyberpunk neon HUD (glow, rounded face rectangle, moving scanline, glitch text)
-- FPS display
-- Press `S` to save a screenshot with overlays (plays a short sound)
-
-Quick start (Windows)
-1. Create and activate a virtual environment (PowerShell):
-
-```powershell
-python -m venv .venv; .\.venv\Scripts\Activate.ps1
-```
-
-2. Install dependencies:
-
-```powershell
-python -m pip install -r requirements.txt
-```
-
-3. Run the app:
-
-```powershell
-python main.py
-```
-
-Notes
-- The first time you run the app, the Hugging Face model will be downloaded (internet required).
-- If the model can't be loaded the app will fallback gracefully to a neutral persona.
-- If you encounter camera access errors, ensure other apps are not using the camera.
-
-Files
-- `main.py` - app entrypoint
-- `face_detector.py` - MediaPipe Face Mesh wrapper
-- `emotion_model.py` - Hugging Face classifier adapter + persona mapping
-- `overlay_utils.py` - HUD drawing functions
-- `assets/` - placeholder assets (hud image & font)
-
-License & attribution
-This project is provided as-is for demo purposes.
